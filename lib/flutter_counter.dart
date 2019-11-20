@@ -17,6 +17,7 @@ class Counter extends StatelessWidget {
     @required this.maxValue,
     @required this.onChanged,
     @required this.decimalPlaces,
+    @required this.tagName,
     this.color,
     this.textStyle,
     this.step = 1,
@@ -50,6 +51,8 @@ class Counter extends StatelessWidget {
 
   /// text syle
   TextStyle textStyle;
+
+  String tagName;
 
   final double buttonSize;
 
@@ -85,6 +88,7 @@ class Counter extends StatelessWidget {
             child: FloatingActionButton(
               onPressed: _decrementCounter,
               elevation: 2,
+              heroTag: "${this.tagName}_decrease",
               tooltip: 'Decrement',
               child: Icon(Icons.remove),
               backgroundColor: color,
@@ -102,6 +106,7 @@ class Counter extends StatelessWidget {
             height: buttonSize,
             child: FloatingActionButton(
               onPressed: _incrementCounter,
+              heroTag: "${this.tagName}_increase",
               elevation: 2,
               tooltip: 'Increment',
               child: Icon(Icons.add),
