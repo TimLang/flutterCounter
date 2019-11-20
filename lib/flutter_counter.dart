@@ -24,7 +24,7 @@ class Counter extends StatelessWidget {
   })  : assert(initialValue != null),
         assert(minValue != null),
         assert(maxValue != null),
-        assert(maxValue > minValue),
+        assert(maxValue >= minValue),
         assert(initialValue >= minValue && initialValue <= maxValue),
         assert(step > 0),
         selectedValue = initialValue,
